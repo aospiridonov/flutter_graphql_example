@@ -32,7 +32,7 @@ String episodeToDisplay(Episode e) {
   }
 }
 
-Episode? episodeFromJson(String e) {
+Episode episodeFromJson(String e) {
   switch (e) {
     case 'NEWHOPE':
       return Episode.NEWHOPE;
@@ -41,7 +41,7 @@ Episode? episodeFromJson(String e) {
     case 'JEDI':
       return Episode.JEDI;
     default:
-      return null;
+      return Episode.NEWHOPE;
   }
 }
 

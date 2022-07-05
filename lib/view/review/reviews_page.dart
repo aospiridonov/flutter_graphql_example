@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_graphql_example/view/review/review_feed.dart';
 
 class ReviewsPage extends StatefulWidget {
   const ReviewsPage({Key? key}) : super(key: key);
@@ -15,8 +16,13 @@ class ReviewsPage extends StatefulWidget {
 class _ReviewsPageState extends State<ReviewsPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('Reviews'),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: const <Widget>[
+        ListTile(title: Text('Live Stream of Reviews')),
+        Expanded(child: ReviewFeed()),
+      ],
     );
   }
 }
