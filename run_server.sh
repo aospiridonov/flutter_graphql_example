@@ -1,0 +1,2 @@
+cd server
+dart pub run graphql_starwars_test_server
