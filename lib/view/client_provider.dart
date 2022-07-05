@@ -6,7 +6,12 @@ class ClientProvider extends StatelessWidget {
   ClientProvider({
     Key? key,
     required this.child,
-  })  : client = makeClient(uri: ''),
+    required String uri,
+    String? subscriptionUri,
+  })  : client = makeClient(
+          uri: uri,
+          subscriptionUri: subscriptionUri,
+        ),
         super(key: key);
 
   final Widget child;
@@ -14,6 +19,9 @@ class ClientProvider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return GraphQLProvider(
+      client: client,
+      child: child,
+    );
   }
 }

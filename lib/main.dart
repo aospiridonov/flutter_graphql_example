@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
+import 'utils/app_constans.dart';
+
 import 'view/client_provider.dart';
 
 void main() async {
@@ -8,11 +10,16 @@ void main() async {
   runApp(const MyApp());
 }
 
+final graphqlEndpoint = 'http://${App.host}:3000/graphql';
+final subscriptionEndpoint = 'ws://${App.host}:3000/subscriptions';
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return ClientProvider(
+      uri: graphqlEndpoint,
+      subscriptionUri: subscriptionEndpoint,
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
