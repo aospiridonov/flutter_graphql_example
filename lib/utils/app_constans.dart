@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:universal_platform/universal_platform.dart';
 
 class App {
